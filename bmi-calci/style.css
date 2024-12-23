@@ -30,7 +30,7 @@ body{
 
 #results {
     font-size: 35px;
-    margin-left: 130px;
+    margin-left: 75px;
     margin-top: 20px;
     color: rgb(241, 241, 241);
 }
@@ -40,7 +40,7 @@ button {
     height: 35px;
     margin-left: 105px;
     margin-top: 25px;
-    background-color: #bd8f12;
+    background-color: #cc9b83;
     padding: 1px 30px;
     border-radius: 8px;
     color: #220707;
@@ -50,9 +50,18 @@ button {
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #000;
+}
+
+button:hover {
+    background-color: #e6c6b4;
+    box-shadow: 5px 5px 10px #000;
 }
 
 h1 {
     display: flex;
     justify-content: center;
+    text-shadow: 4px 8px 4px #000;
 }
