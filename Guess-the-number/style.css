@@ -135,7 +135,8 @@ button {
     margin-top: 50px;
     cursor: pointer;
     /* margin-left: 75px; */
-    transition: ;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease;
+        /* Apply transition */
 }
 
 #subt:hover{
@@ -143,7 +144,7 @@ button {
     color: #fff;
     border: 2px solid #ffffff;
     text-shadow: 2px 2px 4px #000000;
-    box-shadow: 2px 2px 4px #bbb1b1;
+    box-shadow: 4px 4px 4px #bbb1b1;
 }
 
 #guessField {
@@ -206,7 +207,7 @@ p {
     border-radius: 10px;
     font-size: 20px;
     border: 2px solid #2f2f2f;
-
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease;
     margin-top: 10px;
     cursor: pointer;
     /* margin-left: 75px; */
@@ -216,6 +217,8 @@ p {
     background-color: #2f2f2f;
     border: 2px solid #ffffff;
     color: #fff;
+    box-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 
