@@ -1,10 +1,22 @@
-body{
-    background-color: #1f1f1f;
+body {
+    margin: 0;
+    
+    padding: 0;
+    background-image: linear-gradient(to bottom, #00111a, #00334d, #005580);
+    background: url("https://hagall-media.de/cp/forest3.jpg") repeat-x;
+    background-position: center bottom;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
     color: #fff;
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+
 
 .container {
     background-color: #2f2f2f;
