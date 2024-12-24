@@ -135,6 +135,7 @@ button {
     margin-top: 50px;
     cursor: pointer;
     /* margin-left: 75px; */
+    transition: ;
 }
 
 #subt:hover{
@@ -142,6 +143,7 @@ button {
     color: #fff;
     border: 2px solid #ffffff;
     text-shadow: 2px 2px 4px #000000;
+    box-shadow: 2px 2px 4px #bbb1b1;
 }
 
 #guessField {
