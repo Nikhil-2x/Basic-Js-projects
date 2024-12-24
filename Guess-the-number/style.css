@@ -1,108 +1,3 @@
-html {
-    font-family: sans-serif;
-}
-
-body {
-    width: 300px;
-    max-width: 750px;
-    min-width: 480px;
-    margin: 0 auto;
-    background-color: #212121;
-}
-
-.lastResult {
-    color: white;
-    padding: 7px;
-}
-
-.guesses {
-    color: white;
-    padding: 7px;
-}
-
-button {
-    background-color: #141414;
-    color: #fff;
-    width: 250px;
-    height: 50px;
-    border-radius: 25px;
-    font-size: 30px;
-    border-style: none;
-    margin-top: 30px;
-    /* margin-left: 50px; */
-}
-
-#subt {
-    background-color: #161616;
-    color: #ffffff;
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    font-size: 20px;
-    border-style: none;
-    margin-top: 50px;
-    /* margin-left: 75px; */
-}
-
-#guessField {
-    color: #000;
-    width: 250px;
-    height: 50px;
-    font-size: 30px;
-    border-style: none;
-    margin-top: 25px;
-
-    /* margin-left: 50px; */
-    border: 5px solid #6c6d6d;
-    text-align: center;
-}
-
-#guess {
-    font-size: 55px;
-    /* margin-left: 90px; */
-    margin-top: 120px;
-    color: #fff;
-}
-
-.guesses {
-    background-color: #7a7a7a;
-}
-
-#wrapper {
-    box-sizing: border-box;
-    text-align: center;
-    width: 450px;
-    height: 600px;
-    background-color: #474747;
-    color: #fff;
-    font-size: 25px;
-}
-
-h1 {
-    background-color: #161616;
-
-    color: #fff;
-    text-align: center;
-}
-
-p {
-    font-size: 16px;
-    text-align: center;
-}
-
-#playAgain {
-    background-color: #161616;
-    color: #ffffff;
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    font-size: 20px;
-    border-style: none;
-    margin-top: 10px;
-    /* margin-left: 75px; */
-}
-
-
 @property --rotate {
     syntax: "<angle>";
     initial-value: 132deg;
@@ -149,10 +44,223 @@ body {
     transition: color 1s;
 }
 
-.card:hover:before,
-.card:hover:after {
-    animation: none;
-    opacity: 0;
+
+.card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #040505, #8391b8 43%, #655085);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    width: 300px;
+    max-width: 750px;
+    min-width: 480px;
+    /* height: 85vh;
+    width: calc(var(--card-height) / 1.5); */
+    margin: 0 auto;
+    background-color: #212121;
+}
+
+.lastResult {
+    color: white;
+    padding: 7px;
+}
+
+.guesses {
+    color: white;
+    padding: 7px;
+}
+
+button {
+    background-color: #141414;
+    color: #fff;
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 30px;
+    border-style: none;
+    margin-top: 30px;
+    /* margin-left: 50px; */
+}
+
+#subt {
+    background-color: #D5CEA3;
+    text-shadow: 2px 2px 4px #ab9595;
+    color: #000000;
+    display: inline;
+    border: 2px solid #e9f1e9;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    /* border-style: none; */
+    margin-top: 50px;
+    cursor: pointer;
+    /* margin-left: 75px; */
+}
+
+#subt:hover{
+    background-color: #2f2f2f;
+    color: #fff;
+    border: 2px solid #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#guessField {
+    color: #000;
+    width: 250px;
+    height: 30px;
+    font-size: 30px;
+    border-style: none;
+    margin-top: 25px;
+    background-color: #E5E5CB;
+
+    /* margin-left: 50px; */
+    border: 5px solid #481E14;
+    text-align: center;
+}
+
+#guess {
+    font-size: 20px;
+    /* margin-left: 90px; */
+    margin-top: 120px;
+    color: #fff;
+}
+
+.guesses {
+    background-color: #3E3232;
+}
+
+#wrapper {
+    box-sizing: border-box;
+    text-align: center;
+    height: 85vh;
+    width: calc(var(--card-height) / 1.5);
+    /* width: 450px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 800px; */
+    background-color: #1A120B;
+    color: #fff;
+    font-size: 25px;
+}
+
+h2 {
+    background-color: #161616;
+    color: #fff;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    text-align: center;
+}
+
+#playAgain {
+    background-color: #D5CEA3;
+    color: #161616;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 2px solid #2f2f2f;
+
+    margin-top: 10px;
+    cursor: pointer;
+    /* margin-left: 75px; */
+}
+
+#playAgain:hover{
+    background-color: #2f2f2f;
+    border: 2px solid #ffffff;
+    color: #fff;
+}
+
+
+/* @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+:root {
+    --card-height: 85vh;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+
+body {
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+
+.card {
+    background: #191c29;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+}
+
+.card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
 }
 
 
@@ -195,4 +303,4 @@ body {
     100% {
         --rotate: 360deg;
     }
-}
+} */
