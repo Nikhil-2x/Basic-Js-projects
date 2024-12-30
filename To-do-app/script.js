@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
       tasks.push(newTask);
       savingTask();
+      renderTask(newTask);
       todoInput.value = "";
       console.log(tasks);
     });
@@ -32,6 +33,22 @@ document.addEventListener('DOMContentLoaded',()=>{
         <span>${task.text}</span>
         <button>delete</button>
         `;
+        
+        list.addEventListener('click',(e)=>{
+          if(e.target.tagName === 'BUTTON')  return;
+          task.completed = !task.completed;
+          list.classList.toggle("completed");
+          savingTask();
+        });
+
+        list.querySelector('button').addEventListener('click',(e)=>{
+          e.stopPropagation()
+          tasks = tasks.filter(t => t.id !== task.id);
+          list.remove();
+          savingTask();
+
+        })
+
         todoList.appendChild(list);
     }
 
