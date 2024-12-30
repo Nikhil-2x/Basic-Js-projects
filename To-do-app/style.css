@@ -65,7 +65,25 @@ ul {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 4px 8px;       /* Increased padding for spacing */
+    padding: 4px 8px;
+    margin: 0;
+    max-height: 400px;      /* Set a fixed height */
+    overflow-y: auto;       /* Add vertical scroll */
+    scrollbar-width: thin;  /* For modern browsers, thin scrollbar */
+    scrollbar-color: #888 #1f1f1f;           /* Customize scrollbar color */
+}
+
+ul::-webkit-scrollbar {
+    width: 8px;                /* Scrollbar width */
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #888;         /* Scrollbar thumb color */
+    border-radius: 4px;         /* Rounded scrollbar thumb */
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: #555;          /* Scrollbar thumb hover color */
 }
 
 li {
@@ -74,14 +92,13 @@ li {
     background-color: #2f2f2f;
     display: flex;
     justify-content: space-between;
-    align-items: center;       /* Ensures content is vertically centered */
+    align-items: center;       /* Ensure items are centered vertically */
     border-radius: 5px;
-    height: 45px;             /* Increased height */
-    padding: 0 15px;          /* Added horizontal padding for spacing */
+    height: 45px;               /* Task height */
+    padding: 0 15px;           /* Inner padding */
     box-shadow: 3px 4px 10px black;
-    margin-bottom: 15px;       /* Increased margin for better spacing */
+    margin-bottom: 10px;
 }
-
 li button {
     background-color: #d32f2f;
     border: none;
@@ -96,3 +113,9 @@ li button {
 li button:hover {
     background-color: #9c0606;
 }
+
+.search-container {
+    margin: 10px 0;
+    text-align: center;
+}
+
