@@ -42,10 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     list.querySelector("button").addEventListener("click", (e) => {
-      e.stopPropagation();
-      tasks = tasks.filter((t) => t.id !== task.id);
-      list.remove();
-      savingTask();
+      e.stopPropagation();                            // Prevent triggering parent click event
+
+      list.classList.add("removed");                  // Add 'removed' class to trigger fade-out animation
+
+      // Wait for the fade-out animation to complete before removing
+      setTimeout(() => {
+        tasks = tasks.filter((t) => t.id !== task.id); // Remove from array
+        list.remove();                                 // Remove from DOM
+        savingTask();                                  // Save updated tasks to localStorage
+      }, 300);                                         // Match animation duration in CSS (0.3s)
     });
 
     todoList.appendChild(list);
