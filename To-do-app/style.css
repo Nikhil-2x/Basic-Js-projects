@@ -1,85 +1,98 @@
-body{
+body {
     background-color: rgb(41, 39, 39);
     color: #fff;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-#content{
+
+#content {
     background-color: #1f1f1f;
     box-shadow: 2px 4px 10px black;
-    border: 2px solid gray
+    border: 2px solid gray;
+    padding: 20px;       /* Added padding for better spacing inside the content box */
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-.input-container{
-    margin: 4px;
-    padding: 1px 6px;
+.input-container {
+    margin: 6px;             /* margin for better spacing */
+    padding: 4px 8px;
 }
 
-#todo-input{
+#todo-input {
     background-color: #2f2f2f;
+    color: #fff;
+    margin-bottom:6px ;
+    border: 2px solid;
+    border-radius: 5px;
+    height: 40px;               /* Increased height */
+    width: 300px;              /* Added a width for better size */
+    box-shadow: 3px 6px 10px black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;          /* Increased font size for better readability */
+}
+
+.add-task-btn {
+    background-color: rgb(56, 16, 237);
     color: #fff;
     border: 2px solid;
     border-radius: 5px;
-    height: 33px;
+    height: 45px;          /* Increased height */
+    width: 120px;          /* Added a fixed width */
     box-shadow: 3px 6px 10px black;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    /* Increased font size */
 }
 
-.add-task-btn{
-    background-color: rgb(56, 16, 237);
-    color: #fff;
-    border: 2px solid ;
-    border-radius: 5px;
-    height: 40px;
-    box-shadow: 3px 6px 10px black;
-    font-family: 'Courier New', Courier, monospace;
-}
-.add-task-btn:hover{
+.add-task-btn:hover {
     background-color: rgb(39, 12, 158);
     color: #fff;
     cursor: pointer;
 }
 
-ul{
+ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 1px 6px;
+    padding: 4px 8px;       /* Increased padding for spacing */
 }
 
-li{
+li {
     color: white;
     border: 2px solid #3f3f3f;
     background-color: #2f2f2f;
     display: flex;
     justify-content: space-between;
+    align-items: center;       /* Ensures content is vertically centered */
     border-radius: 5px;
-    height: 33px;
+    height: 45px;             /* Increased height */
+    padding: 0 15px;          /* Added horizontal padding for spacing */
     box-shadow: 3px 4px 10px black;
-    margin-bottom: 10px;
+    margin-bottom: 15px;       /* Increased margin for better spacing */
 }
 
-li button{
+li button {
     background-color: #d32f2f;
     border: none;
-    padding: 5px;
+    padding: 8px 12px;         /* Increased padding for larger button size */
     color: white;
     border-radius: 5px;
     cursor: pointer;
     margin: 4px;
+    font-size: 14px;          /* Slightly increased font size */
 }
-li button:hover{
-    background-color: #9c0606; 
+
+li button:hover {
+    background-color: #9c0606;
 }
