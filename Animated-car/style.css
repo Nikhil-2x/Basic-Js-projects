@@ -7,7 +7,7 @@ body {
     overflow: hidden;
 }
 
-.sky {
+/* .sky {
     height: 100vh;
     width: 100%;
     background-image: url(background.jpg);
@@ -15,6 +15,8 @@ body {
     background-size: cover;
     position: absolute;
 }
+
+
 
 .trees {
     height: 100vh;
@@ -24,6 +26,15 @@ body {
     background-size: cover;
     position: absolute;
     top: -144px;
+} */
+
+.sky {
+    height: 100vh;
+    width: 100%;
+    background-image: url(back.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .track {
