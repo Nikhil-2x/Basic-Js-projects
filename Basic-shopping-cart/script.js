@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.pop();
     }
     saveCart();
-    alert("All products from cart have been removed successfully!");
+    alert("All products from the cart will be removed");
     totalPriceDisplay.textContent = `$0.00`;
     renderItem();
   });
