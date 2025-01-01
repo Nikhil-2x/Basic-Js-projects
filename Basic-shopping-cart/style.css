@@ -44,6 +44,7 @@ h2 {
     border-radius: 5px;
 }
 
+
 .product button {
     background-color: #6200ea;
     border: none;
@@ -60,6 +61,34 @@ h2 {
     background-color: #3700b3;
     box-shadow: 3px 6px 10px black;
 }
+
+.cartt {
+    background-color: #333333;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.cartt button {
+    background-color: #6200ea;
+    border: none;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: box-shadpw 0.3s;
+}
+
+.cartt button:hover {
+    background-color: #3700b3;
+    box-shadow: 3px 6px 10px black;
+}
+
 
 #cart-items {
     margin-bottom: 20px;
