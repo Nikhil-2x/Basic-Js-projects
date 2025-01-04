@@ -1,15 +1,25 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #2f2f2f;
+    background: linear-gradient(135deg, #2f2f2f, #1a1a1a);
     color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 h1 {
     text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 2s ease;
+    background: linear-gradient(90deg, #ff6f61, #f8ff6f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 main {
@@ -22,46 +32,62 @@ main {
 }
 
 .inner {
-    /* display: grid; */
     height: 60vh;
     width: 60vh;
     gap: 5px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    perspective: 1000px;
 }
 
 .btn-box {
-    background-color: #1f1f1f;
+    background: radial-gradient(circle, #1f1f1f, #3a3a3a);
     color: #fff;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid #393939;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: bold;
     cursor: pointer;
-    font-size: large;
-    /* width: 200px; */
-    /* height: 130px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s, box-shadow 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+}
+
+.btn-box:hover:not(:disabled) {
+    transform: rotateY(360deg) scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    background: radial-gradient(circle, #3a3a3a, #5a5a5a);
+}
+
+.btn-box:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background: linear-gradient(135deg, #393939, #2b2b2b);
 }
 
 .reset-btn {
     width: 20vh;
-    padding: 10px;
-    background-color: rgb(223, 236, 148);
+    padding: 15px;
+    background: linear-gradient(45deg, rgb(223, 236, 148), rgb(217, 249, 40));
     border: none;
-    border-radius: 5px;
-    box-shadow: 2px 4px 6px;
-}
-
-.reset-btn:hover {
-    background-color: rgb(217, 249, 40);
-    box-shadow: 4px 8px 12px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2f2f2f;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s, box-shadow 0.5s, transform 0.3s;
     cursor: pointer;
 }
 
-/* .down-btn{
-    display: flex;
-    justify-content:space-between;
-    
-} */
+.reset-btn:hover {
+    background: linear-gradient(45deg, rgb(217, 249, 40), rgb(223, 236, 148));
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.5);
+    transform: scale(1.2);
+}
 
 msg {
     display: flex;
@@ -69,25 +95,72 @@ msg {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
+    gap: 15px;
+    animation: popUp 1s ease;
 }
 
 #new-game {
     width: 20vh;
-    padding: 10px;
-    background-color: rgb(223, 236, 148);
+    padding: 15px;
+    background: linear-gradient(45deg, rgb(223, 236, 148), rgb(217, 249, 40));
     border: none;
-    border-radius: 5px;
-    box-shadow: 2px 4px 6px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2f2f2f;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.5s, box-shadow 0.5s, transform 0.3s;
+    cursor: pointer;
 }
 
 #new-game:hover {
-    background-color: rgb(217, 249, 40);
-    box-shadow: 4px 8px 12px;
-    cursor: pointer;
+    background: linear-gradient(45deg, rgb(217, 249, 40), rgb(223, 236, 148));
+    box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.5);
+    transform: scale(1.2);
 }
 
 .hidden {
     display: none;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.winning {
+    background: linear-gradient(135deg, #34d399, #10b981);
+    animation: pulse 1s infinite;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(34, 211, 153, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 30px rgba(34, 211, 153, 1);
+    }
 }

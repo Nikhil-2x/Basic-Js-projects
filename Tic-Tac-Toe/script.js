@@ -1,6 +1,5 @@
 let boxes = document.querySelectorAll(".btn-box");
 let resetBtn = document.querySelector(".reset-btn");
-let inner = document.querySelector(".inner");
 let container = document.querySelector(".container");
 let player0 = true;
 let moveCount = 0;
@@ -22,12 +21,14 @@ resetBtn.addEventListener("click", () => {
   player0 = true;
   moveCount = 0;
   enableBtn();
+  clearWinningHighlights(); // Remove the winning highlights
 });
 
 const enableBtn = () => {
   for (let a of boxes) {
     a.disabled = false;
     a.innerText = "";
+    a.classList.remove("winning"); // Remove the winning class
   }
 };
 
@@ -63,6 +64,7 @@ const checkForWinner = () => {
 
     if (postV1 !== "" && postV2 !== "" && postV3 !== "") {
       if (postV1 === postV2 && postV3 === postV2) {
+        highlightWinningBoxes(patt); // Highlight the winning boxes
         return true;
       }
     }
@@ -75,6 +77,16 @@ const checkWinner = () => {
     let winner = player0 ? "X" : "0";
     showWinner(winner);
   }
+};
+
+const highlightWinningBoxes = (pattern) => {
+  pattern.forEach((index) => {
+    boxes[index].classList.add("winning");
+  });
+};
+
+const clearWinningHighlights = () => {
+  boxes.forEach((box) => box.classList.remove("winning"));
 };
 
 let msg;
