@@ -63,7 +63,3 @@ reverseBtn.addEventListener("click", (e) => {
 clearLogBtn.addEventListener("click", () => {
   conversionLog.innerHTML = "";
 });
-
-// Fetch historical rates
-
-
